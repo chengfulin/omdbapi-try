@@ -6,7 +6,7 @@ import { OmdbResponse } from "../omdb-list/omdb";
 
 @Injectable()
 export class OmdbService {
-  private omdbApi = "http://www.omdbapi.com/";
+  private omdbApi = "https://www.omdbapi.com/";
 
   constructor(private http: Http) { }
 
