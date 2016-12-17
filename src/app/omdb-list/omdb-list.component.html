@@ -1,0 +1,27 @@
+<!-- TOP -->
+<div class="w3-top">
+  <div class="w3-light-grey w3-padding">
+    <div class="w3-row">
+      <input type="text" [(ngModel)]="searchValue"
+                class="w3-input w3-border-bottom w3-border-green w3-quarter" title="Find a movie" placeholder="Find a movie ..." autofocus/>
+      <button type="submit" (click)="renderList()"
+                  class="w3-btn w3-green w3-col l1 m2 s3">go!</button>
+      <div class="w3-right">Page: {{currentPage}} Search Total: {{total}}</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="w3-main w3-content w3-padding">
+  <div class="w3-row" *ngFor="let rowItems of omdbViewList">
+    <!-- For each omdb item -->
+    <div *ngFor="let item of rowItems">
+      <article class="w3-quarter w3-padding">
+        <img class="w3-image" [src]="item.Poster" [title]="item.Title" [alt]="item.Title" />
+        <h3>{{item.Title}}</h3>
+        Year: {{item.Year}}
+      </article>
+    </div>
+  </div>
+</div>
+
